@@ -1,0 +1,286 @@
+{
+  "id": "40b8358b-695e-4886-85fd-95cbe0aaa482",
+  "revision": 0,
+  "last_node_id": 6,
+  "last_link_id": 8,
+  "nodes": [
+    {
+      "id": 4,
+      "type": "GeomPackLoadMesh",
+      "pos": [
+        794.66796875,
+        659.578125
+      ],
+      "size": [
+        270,
+        78
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "mesh",
+          "type": "TRIMESH",
+          "links": [
+            3,
+            7
+          ]
+        },
+        {
+          "name": "texture",
+          "type": "IMAGE",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-geometrypack",
+        "ver": "53d17f3e55e406f7cab8805cd64084af27ba313f",
+        "Node name for S&R": "GeomPackLoadMesh"
+      },
+      "widgets_values": [
+        "3d/Stanford_Bunny.stl"
+      ]
+    },
+    {
+      "id": 2,
+      "type": "NeurCADReconTrain",
+      "pos": [
+        1250.07421875,
+        482.96484375
+      ],
+      "size": [
+        270,
+        242
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "NEURCADRECON_MODEL",
+          "link": 5
+        },
+        {
+          "name": "point_cloud",
+          "type": "TRIMESH",
+          "link": 3
+        }
+      ],
+      "outputs": [
+        {
+          "name": "trained_model",
+          "type": "NEURCADRECON_MODEL",
+          "links": [
+            2
+          ]
+        },
+        {
+          "name": "checkpoint_path",
+          "type": "STRING",
+          "links": null
+        },
+        {
+          "name": "training_log",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-cadabra",
+        "ver": "f0efa9678de03ac217a79917a61f99dcc4749aab",
+        "Node name for S&R": "NeurCADReconTrain"
+      },
+      "widgets_values": [
+        3000,
+        20000,
+        0.0001,
+        "balanced",
+        true,
+        "",
+        500
+      ]
+    },
+    {
+      "id": 6,
+      "type": "LoadNeurCADReconModel",
+      "pos": [
+        839.4131010868441,
+        466.7912049391499
+      ],
+      "size": [
+        277.3267578125,
+        102
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "model",
+          "type": "NEURCADRECON_MODEL",
+          "links": [
+            5
+          ]
+        },
+        {
+          "name": "model_info",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-cadabra",
+        "ver": "0df379bfa0453f54d9a890bbc61c275472ec2227",
+        "Node name for S&R": "LoadNeurCADReconModel"
+      },
+      "widgets_values": [
+        "auto",
+        "siren"
+      ]
+    },
+    {
+      "id": 5,
+      "type": "GeomPackPreviewMeshDual",
+      "pos": [
+        1944.5017661880236,
+        487.8428781242115
+      ],
+      "size": [
+        768,
+        826
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "mesh_1",
+          "type": "TRIMESH",
+          "link": 7
+        },
+        {
+          "name": "mesh_2",
+          "type": "TRIMESH",
+          "link": 8
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfyui-geometrypack",
+        "ver": "43fa74c9323122bf942fe30da3b4fe72ddb58330",
+        "Node name for S&R": "GeomPackPreviewMeshDual"
+      },
+      "widgets_values": [
+        "side_by_side",
+        "fields",
+        1,
+        1,
+        ""
+      ]
+    },
+    {
+      "id": 3,
+      "type": "NeurCADReconInference",
+      "pos": [
+        1589.5078125,
+        492.01953125
+      ],
+      "size": [
+        270,
+        78
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "NEURCADRECON_MODEL",
+          "link": 2
+        }
+      ],
+      "outputs": [
+        {
+          "name": "mesh",
+          "type": "TRIMESH",
+          "links": [
+            8
+          ]
+        },
+        {
+          "name": "status",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-cadabra",
+        "ver": "f0efa9678de03ac217a79917a61f99dcc4749aab",
+        "Node name for S&R": "NeurCADReconInference"
+      },
+      "widgets_values": [
+        256
+      ]
+    }
+  ],
+  "links": [
+    [
+      2,
+      2,
+      0,
+      3,
+      0,
+      "NEURCADRECON_MODEL"
+    ],
+    [
+      3,
+      4,
+      0,
+      2,
+      1,
+      "TRIMESH"
+    ],
+    [
+      5,
+      6,
+      0,
+      2,
+      0,
+      "NEURCADRECON_MODEL"
+    ],
+    [
+      7,
+      4,
+      0,
+      5,
+      0,
+      "TRIMESH"
+    ],
+    [
+      8,
+      3,
+      0,
+      5,
+      1,
+      "TRIMESH"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.8021556577261952,
+      "offset": [
+        -643.7148382397307,
+        -176.3920657492439
+      ]
+    },
+    "frontendVersion": "1.33.10",
+    "workflowRendererVersion": "LG"
+  },
+  "version": 0.4
+}
