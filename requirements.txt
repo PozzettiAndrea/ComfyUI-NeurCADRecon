@@ -1,0 +1,8 @@
+# NeurCADRecon dependencies
+torch>=2.0.0
+numpy>=1.24.0
+trimesh>=3.20.0
+scipy>=1.11.0
+
+# Marching cubes for mesh extraction
+PyMCubes>=0.1.4
