@@ -1,3 +1,7 @@
+----------
+Work in Progress! This node is not finished.
+----------
+
 # ComfyUI-NeurCADRecon
 
 Neural implicit CAD reconstruction with Morse loss.
@@ -34,6 +38,12 @@ pip install -r ComfyUI-NeurCADRecon/requirements.txt
 - trimesh>=3.20.0
 - scipy>=1.11.0
 - PyMCubes>=0.1.4
+
+## Community
+
+Questions or feature requests? Open a [Discussion](https://github.com/PozzettiAndrea/ComfyUI-NeurCADRecon/discussions) on GitHub.
+
+Join the [Comfy3D Discord](https://discord.gg/PN743tE5) for help, updates, and chat about 3D workflows in ComfyUI.
 
 ## Credits
 
